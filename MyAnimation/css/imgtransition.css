@@ -1,0 +1,95 @@
+/*动画关键点
+1.时间段
+2.参数（长宽高，位移量等）
+
+主要涉及transition
+
+变换速度除了ease以外，其他模式还包括
+（1）linear：匀速
+（2）ease-in：加速
+（3）ease-out：减速
+（4）cubic-bezier函数：自定义速度模式
+*/
+.img{
+    height: 40px;
+    width: 20px;
+    display: block;
+}
+/*
+img1瞬变动画
+*/
+#img1:hover{
+    height: 200px;
+    width: 100px;
+}
+
+
+/*
+img2延迟动画
+*/
+/*#img2{
+    transition: 1s;
+}
+#img2:hover{
+    height: 200px;
+    width: 100px;
+}*/
+/*另一种写法*/
+#img2{
+    transition: 1s height ease,1s width linear;
+}
+#img2:hover{
+    height: 200px;
+    width: 100px;
+}
+
+/*
+img3部分属性延迟动画，部分属性瞬间动画
+*/
+#img3{
+    transition: 1s height;
+}
+#img3:hover{
+    height: 200px;
+    width: 100px;
+}
+
+
+/*
+img4部分属性延迟动画
+*/
+#img4{
+    transition: 1s height cubic-bezier(.83,.97,.05,1.44);
+}
+#img4:hover{
+    height: 200px;
+}
+
+/*
+img5属性先后延迟动画
+*/
+/*#img5{
+    transition: 1s height ease in,1s 1s width ease out;
+}*/
+/*另一种写法*/
+#img5{
+    
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: ease in;
+
+    transition-property: width;
+    transition-duration: 1s;
+    transition-delay: 2s;
+    transition-timing-function: ease in;
+}
+/*#img5{
+    transition-property: width;
+    transition-duration: 1s;
+    transition-delay: 2s;
+    transition-timing-function: ease in;
+}*/
+#img5:hover{
+    height: 200px;
+    width: 100px;
+}

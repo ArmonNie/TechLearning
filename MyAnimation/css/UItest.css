@@ -1,0 +1,15 @@
+*{
+    border: red  solid thin;
+}
+
+html{
+    border: rgb(255, 0, 221)  solid thin;
+}
+
+body{
+    border: rgb(55, 0, 255)  solid thin;
+}
+
+div{
+    border: black  solid thin;
+}
